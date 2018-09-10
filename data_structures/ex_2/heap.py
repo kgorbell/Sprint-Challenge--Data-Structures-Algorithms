@@ -1,6 +1,20 @@
 def heapsort(arr):
- pass 
- 
+  # newHeap = Heap()
+  # newArr = []
+  # for i in arr:
+  #   newHeap.insert(i)
+  # while len(newHeap.storage) > 0:
+  #   newArr.append(newHeap.storage[0])
+  #   newHeap.delete()
+  # return newArr
+
+  newHeap = Heap()
+  newArr = [0] * len(arr) #Allows you to set the size of the array, to avoid Python auto-setting a length and then working to epand it upon each new addition.
+  for i in arr:
+    newHeap.insert(i)
+  for i in range(len(arr)-1, 0, -1):
+    newArr[i] = newHeap.delete()
+  return newArr
 
 class Heap:
   def __init__(self):
